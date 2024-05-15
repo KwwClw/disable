@@ -16,7 +16,7 @@ $order = 1;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disable</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
         body {
@@ -27,8 +27,8 @@ $order = 1;
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="p-3 mb-2 bg-dark text-white">
-    <div>
+<body class="p-3 mb-2">
+    <div class="container my-3">
         <h1 class="text-center">Disable Table</h1>
         <hr>
         <div class="container" style="margin-bottom: 1em;">
@@ -38,7 +38,7 @@ $order = 1;
             </form>
         </div>
         <?php if ($count>0) { ?>
-        <table class="table table-striped table-dark">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th><center>detail_id</th>
@@ -87,10 +87,5 @@ $order = 1;
         <a href="insertForm.php" class="btn btn-success">เพิ่มข้อมูล</a>
     </div>
 </body>
-
-<script>
-    // const date = new Date();
-    // console.log(date)
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
