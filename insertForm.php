@@ -1,3 +1,21 @@
+<?php
+
+require('dbconnect.php');
+
+$sql_member = "SELECT * FROM tb_member ORDER BY id ASC";
+$result_member = mysqli_query($connect, $sql_member);
+$rowm = mysqli_num_rows($result_member);
+$count = $rowm;
+// echo $row."<br>";
+// echo $count."<br>";
+
+// for($i = 0; $i < $count; $i++) {
+//     // echo "option ";
+//     $row = mysqli_fetch_array($result_member, MYSQLI_BOTH);
+//     echo $i. "รหัสพนักงาน = ".$row["id"]."<br>";
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,17 +34,26 @@
 </head>
 <body class="p-3 mb-2">
     <div class="container my-3">
+
         <h2 class="text-center">แบบฟอร์มเพิ่มข้อมูล</h2>
         <hr>
         <form action="insertData.php" method="POST">
 
-            <div class="form-group">
+        <div class="form-group">
                 <label for="team_name">ชื่อทีม</label>
                 <input type="text" name="team_name" class="form-control">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="id">id</label>
-                <input type="text" name="id" class="form-control">
+                <select name="id" class="form-control">
+                    <option value="">---Select ID---</option>
+                    <?php
+                        for($i = 0; $i < $count; $i++) {
+                            $row = mysqli_fetch_array($result_member, MYSQLI_BOTH);
+                            echo "<option value=".$row["id"].">$rowm[0]</option>";
+                        }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="detail_date">ว/ด/ป เกิด</label>
@@ -57,9 +84,9 @@
                 <input type="text" name="detail_type" class="form-control">
             </div>
 
-            <input type="submit" value="บันทึกข้อมูล" class="btn btn-success">
-            <input type="reset" value="ล้างข้อมูล" class="btn btn-danger ml-2">
-            <a href="index.php" class="btn btn-primary ml-2">กลับหน้าแรก</a>
+            <input type="submit" value="บันทึกข้อมูล" class="btn btn-success mt-2">
+            <input type="reset" value="ล้างข้อมูล" class="btn btn-danger ml-2 mt-2">
+            <a href="index.php" class="btn btn-primary ml-2 mt-2">กลับหน้าแรก</a>
         </form>
     </div>
 </body>
