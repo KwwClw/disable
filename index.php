@@ -28,10 +28,10 @@ $order = 1;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="p-3 mb-2">
-    <div class="container my-3">
+    <div class="container">
         <h1 class="text-center">Disable Table</h1>
         <hr>
-        <div class="container" style="margin-bottom: 1em;">
+        <div class="container mb-2">
             <form action="searchData.php" class="d-flex" method="POST">
                 <input class="form-control me-2" type="search" name="tname" placeholder="ป้อนชื่อทีม">
                 <button class="btn btn-outline-info ml-1" type="send">Search</button>
