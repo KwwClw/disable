@@ -15,6 +15,26 @@ $detail_occ = $_POST['detail_occ'];
 $detail_salary = $_POST['detail_salary'];
 $detail_type = $_POST['detail_type'];
 
+if (isset($_POST['detail_care'])) {
+    $detail_care = "Yes";
+} else {
+    $detail_care = "No";
+}
+
+if ($detail_care == "No") {
+    $detail_care_name = "";
+    $detail_care_lastname = "";    
+    $detail_care_tell = "";
+    $detail_line = "";
+    $detail_facebook = "";
+} else {
+    $detail_care_name = $_POST['detail_care_name'];
+    $detail_care_lastname = $_POST['detail_care_lastname'];
+    $detail_care_tel = $_POST['detail_care_tel'];
+    $detail_line = $_POST['detail_line'];
+    $detail_facebook = $_POST['detail_facebook'];
+}
+
 $sql = "UPDATE tb_detail SET
     team_name = '$team_name',
     id = '$id',
@@ -24,11 +44,19 @@ $sql = "UPDATE tb_detail SET
     detail_tel = '$detail_tel',
     detail_occ = '$detail_occ',
     detail_salary = '$detail_salary',
-    detail_type = '$detail_type'
+    detail_type = '$detail_type',
+    detail_care = '$detail_care',
+    detail_care_name = '$detail_care_name',
+    detail_care_lastname = '$detail_care_lastname',
+    detail_care_tel = '$detail_care_tel',
+    detail_line = '$detail_line',
+    detail_facebook = '$detail_facebook'
     WHERE detail_id = '$detail_id'";
 
-$result = mysqli_query($connect, $sql);
 // echo $sql;
+
+$result = mysqli_query($connect, $sql);
+
 if($result) {
     echo "แก้ไขข้อมูลเรียบร้อย";
     echo "<a href='index.php'>กลับหน้าแรก<a>";

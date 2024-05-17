@@ -47,7 +47,7 @@ $count = $rowm;
             <div class="form-group">
                 <label for="id">id</label>
                 <select name="id" class="form-control">
-                    <option value="">---Select ID---</option>
+                    <option value="<?php echo $row["id"]; ?>"><?php echo $row["id"]; ?></option>
                     <?php
                         for($i = 0; $i < $count; $i++) {
                             $rowm = mysqli_fetch_array($result_member, MYSQLI_BOTH);
@@ -83,6 +83,55 @@ $count = $rowm;
             <div class="form-group">
                 <label for="detail_type">ประเภทความพิการ</label>
                 <input type="text" name="detail_type" class="form-control" value="<?php echo $row["detail_type"]; ?>">
+            </div>
+
+            <style>
+            .answer{
+                    display:none;
+                    }
+                    .question:has(input[type="checkbox"][value="1"]:checked) ~ .answer {
+                    display:block
+                    }
+            .coupon_question{
+                padding: 10px;
+                margin-top: 5px;
+            }
+            </style>
+
+            <div class="question my-1">
+                <label for="detail_care" class="fs-5">Do you have a coupon?</label>
+                <?php
+                if ($row['detail_care'] == "Yes") {
+                    echo '<input class="coupon_question form-check-input scale-1 mx-1" type="checkbox" name="detail_care" value="1" checked>';
+                } else {
+                    echo '<input class="coupon_question form-check-input scale-1 mx-1" type="checkbox" name="detail_care" value="1">';
+                }
+                ?>
+            </div>
+        
+            <div class="answer">
+                <label for="detail_care_name">ชื่อผู้ดูแล</label>
+                <input type="text" name="detail_care_name" class="form-control" value="<?php echo $row["detail_care_name"]; ?>">
+            </div>
+
+            <div class="answer">
+                <label for="detail_care_lastname">นามสกุลผู้ดูแล</label>
+                <input type="text" name="detail_care_lastname" class="form-control" value="<?php echo $row["detail_care_lastname"]; ?>">
+            </div>
+
+            <div class="answer">
+                <label for="detail_care_tel">เบอร์โทรผู้ดูแล</label>
+                <input type="text" name="detail_care_tel" class="form-control" value="<?php echo $row["detail_care_tel"]; ?>">
+            </div>
+
+            <div class="answer">
+                <label for="detail_line">ไลน์ผู้ดูแล:</label>
+                <input type="text" name="detail_line" class="form-control" value="<?php echo $row["detail_line"]; ?>">
+            </div>
+
+            <div class="answer">
+                <label for="detail_facebook">เฟซบุ๊คผู้ดูแล</label>
+                <input type="text" name="detail_facebook" class="form-control" value="<?php echo $row["detail_facebook"]; ?>">
             </div>
 
             <input type="submit" value="บันทึกข้อมูล" class="btn btn-success mt-2">

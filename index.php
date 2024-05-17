@@ -51,6 +51,12 @@ $order = 1;
                     <th><center>detail_occ</th>
                     <th><center>detail_salary</th>
                     <th><center>detail_type</th>
+                    <!-- <th><center>detail_care_name</th>
+                    <th><center>detail_care_lastname</th>
+                    <th><center>detail_care_tel</th>
+                    <th><center>detail_care_tel</th>
+                    <th><center>detail_line</th>
+                    <th><center>detail_facebook</th> -->
                     <th><center>แก้ไข</th>
                     <th><center>ลบ</th>
                 </tr>

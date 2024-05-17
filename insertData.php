@@ -11,15 +11,48 @@ $detail_tel = $_POST['detail_tel'];
 $detail_occ = $_POST['detail_occ'];
 $detail_salary = $_POST['detail_salary'];
 $detail_type = $_POST['detail_type'];
+// $detail_care = $_POST['detail_care'];
+// $detail_care_name = $_POST['detail_care_name'];
+// $detail_care_lastname = $_POST['detail_care_lastname'];
+// $detail_care_tel = $_POST['detail_care_tel'];
+// $detail_line = $_POST['detail_line'];
+// $detail_facebook = $_POST['detail_facebook'];
+
+if (isset($_POST['detail_care'])) {
+    $detail_care = "Yes";
+} else {
+    $detail_care = "No";
+}
+
+if ($detail_care == "No") {
+    $detail_care_name = "";
+    $detail_care_lastname = "";    
+    $detail_care_tell = "";
+    $detail_line = "";
+    $detail_facebook = "";
+} else {
+    $detail_care_name = $_POST['detail_care_name'];
+    $detail_care_lastname = $_POST['detail_care_lastname'];
+    $detail_care_tel = $_POST['detail_care_tel'];
+    $detail_line = $_POST['detail_line'];
+    $detail_facebook = $_POST['detail_facebook'];
+}
+
+// echo $detail_care;
+// echo $detail_care_name;
+// echo $detail_care_lastname;
+// echo $detail_care_tel;
+// echo $detail_line;
+// echo $detail_facebook;
 
 // $sql = "INSERT INTO tb_detail (team_name, id, detail_date, detail_address, detail_idp, detail_tel, detail_occ, detail_salary, detail_type, detail_care, detail_care_name, detail_care_lastname, detail_care_tel, detail_line, detail_facebook)
 // VALUES ('$team_name', '$id', '$detail_date', '$detail_address', '$detail_idp', '$detail_tel', '$detail_occ', '$detail_salary', '$detail_type', '', '', '', '', '', '');"
 
 $sql = "INSERT INTO tb_detail (team_name, id, detail_date, detail_address, detail_idp, detail_tel, detail_occ, detail_salary, detail_type, detail_care, detail_care_name, detail_care_lastname, detail_care_tel, detail_line, detail_facebook) VALUES
-    ('$team_name', '$id', '$detail_date', '$detail_address', '$detail_idp', '$detail_tel', '$detail_occ', '$detail_salary', '$detail_type', '', '', '', '', '', '')";
-
-$result = mysqli_query($connect, $sql);
+    ('$team_name', '$id', '$detail_date', '$detail_address', '$detail_idp', '$detail_tel', '$detail_occ', '$detail_salary', '$detail_type', '$detail_care', '$detail_care_name', '$detail_care_lastname', '$detail_care_tel', '$detail_line', '$detail_facebook')";
 // echo $sql;
+$result = mysqli_query($connect, $sql);
+
 if($result) {
     echo "บันทึกข้อมูลเรียบร้อย";
     echo "<a href='index.php'>กลับหน้าแรก<a>";
