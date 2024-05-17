@@ -22,11 +22,11 @@ if (isset($_POST['detail_care'])) {
 }
 
 if ($detail_care == "No") {
-    $detail_care_name = "";
-    $detail_care_lastname = "";    
-    $detail_care_tell = "";
-    $detail_line = "";
-    $detail_facebook = "";
+    $detail_care_name = "-";
+    $detail_care_lastname = "-";    
+    $detail_care_tel = "-";
+    $detail_line = "-";
+    $detail_facebook = "-";
 } else {
     $detail_care_name = $_POST['detail_care_name'];
     $detail_care_lastname = $_POST['detail_care_lastname'];

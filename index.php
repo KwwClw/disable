@@ -28,7 +28,7 @@ $order = 1;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="p-3 mb-2">
-    <div class="container">
+    <div class="container" style="overflow-x:auto;">
         <h1 class="text-center">Disable Table</h1>
         <hr>
         <div class="container mb-2">
@@ -42,7 +42,6 @@ $order = 1;
             <thead>
                 <tr>
                     <th><center>detail_id</th>
-                    <th><center>team_name</th>
                     <th><center>id</th>
                     <th><center>detail_date</th>
                     <th><center>detail_address</th>
@@ -51,9 +50,9 @@ $order = 1;
                     <th><center>detail_occ</th>
                     <th><center>detail_salary</th>
                     <th><center>detail_type</th>
-                    <!-- <th><center>detail_care_name</th>
+                    <!-- <th><center>detail_care</th>
+                    <th><center>detail_care_name</th>
                     <th><center>detail_care_lastname</th>
-                    <th><center>detail_care_tel</th>
                     <th><center>detail_care_tel</th>
                     <th><center>detail_line</th>
                     <th><center>detail_facebook</th> -->
@@ -66,7 +65,6 @@ $order = 1;
                 <tr>
                     <!-- <td><center><?php //echo $order++ ?></td> -->
                     <td><center><?php echo $row["detail_id"] ?></td>
-                    <td><center><?php echo $row["team_name"] ?></td>
                     <td><center><?php echo $row["id"]?></td>
                     <td><center><?php echo $row["detail_date"] ?></td>
                     <td><center><?php echo $row["detail_address"] ?></td>
@@ -75,6 +73,12 @@ $order = 1;
                     <td><center><?php echo $row["detail_occ"] ?></td>
                     <td><center><?php echo $row["detail_salary"] ?></td>
                     <td><center><?php echo $row["detail_type"] ?></td>
+                    <!-- <td><center><?php echo $row["detail_care"] ?></td>
+                    <td><center><?php echo $row["detail_care_name"] ?></td>
+                    <td><center><?php echo $row["detail_care_lastname"] ?></td>
+                    <td><center><?php echo $row["detail_care_tel"] ?></td>
+                    <td><center><?php echo $row["detail_line"] ?></td>
+                    <td><center><?php echo $row["detail_facebook"] ?></td> -->
                     <td><center>
                         <a href="editForm.php?detail_id=<?php echo $row["detail_id"] ?>" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                     </td>
