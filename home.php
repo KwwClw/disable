@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<!-- Website - www.codingnepalweb.com -->
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Boxicons CDN Link -->
-    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+        body {
+            font-family: "Kanit", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+    </style>
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
   </head>
   <body>
     <div class="sidebar">
@@ -18,25 +25,32 @@
       </div>
       <ul class="nav-list">
         <li>
-          <a href="#">
+          <a href="home.php">
             <i class="bx bx-user"></i>
-            <span class="links_name">User</span>
+            <span class="links_name">Admin</span>
           </a>
-          <span class="tooltip">User</span>
+          <span class="tooltip">Admin</span>
         </li>
         <li>
-          <a href="#">
+          <a href="member_tb.php">
           <i class='bx bx-table'></i>
             <span class="links_name">Member Table</span>
           </a>
           <span class="tooltip">Member Table</span>
         </li>
         <li>
-          <a href="#">
+          <a href="detail_tb1.php">
           <i class='bx bx-table'></i>
-            <span class="links_name">Detail Table</span>
+            <span class="links_name">Detail Table_1</span>
           </a>
-          <span class="tooltip">Detail Table</span>
+          <span class="tooltip">Detail Table_1</span>
+        </li>
+        <li>
+          <a href="detail_tb2.php">
+          <i class='bx bx-table'></i>
+            <span class="links_name">Detail Table_2</span>
+          </a>
+          <span class="tooltip">Detail Table_2</span>
         </li>
         <li>
           <a href="#">
@@ -58,7 +72,7 @@
       </ul>
     </div>
     <section class="home-section">
-      <div class="text">Dashboard</div>
+        <div class="text">Dashboard</div>
     </section>
 
     <script>

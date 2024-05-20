@@ -12,10 +12,11 @@ $order = 1;
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disable</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
@@ -26,8 +27,64 @@ $order = 1;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body class="p-3 mb-2 bg-gray-100">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+  </head>
+  <body class="p-3 mb-2 bg-slate-200">
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bxs-layer icon"></i>
+        <div class="logo_name">Admin</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="home.php">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Admin</span>
+          </a>
+          <span class="tooltip">Admin</span>
+        </li>
+        <li>
+          <a href="member_tb.php">
+          <i class='bx bx-table'></i>
+            <span class="links_name">Member Table</span>
+          </a>
+          <span class="tooltip">Member Table</span>
+        </li>
+        <li>
+          <a href="detail_tb1.php">
+          <i class='bx bx-table'></i>
+            <span class="links_name">Detail Table_1</span>
+          </a>
+          <span class="tooltip">Detail Table_1</span>
+        </li>
+        <li>
+          <a href="detail_tb2.php">
+          <i class='bx bx-table'></i>
+            <span class="links_name">Detail Table_2</span>
+          </a>
+          <span class="tooltip">Detail Table_2</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Setting</span>
+          </a>
+          <span class="tooltip">Setting</span>
+        </li>
+        <li class="profile">
+          <div class="profile-details">
+            <img src="https://i.pinimg.com/564x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" alt="profileImg" />
+            <div class="name_job">
+              <div class="name">Admin_1</div>
+              <div class="job">Web designer</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
     <div class="container mx-auto overflow-x-auto p-6 bg-white rounded shadow-md">
         <h1 class="text-center text-2xl font-bold">Disable Table</h1>
         <hr class="my-4">
@@ -83,5 +140,32 @@ $order = 1;
         <?php } ?>
         <a href="insertForm.php" class="bg-green-500 text-white rounded inline-block mt-4 p-2 mr-1">เพิ่มข้อมูล</a>
     </div>
-</body>
+    </section>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", ()=>{
+        sidebar.classList.toggle("open");
+        menuBtnChange();//calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+        if(sidebar.classList.contains("open")){
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+        }else {
+        closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+        }
+        }
+    </script>
+
+  </body>
 </html>

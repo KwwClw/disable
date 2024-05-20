@@ -17,7 +17,7 @@ $order = 1;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disable</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
         body {
@@ -28,65 +28,61 @@ $order = 1;
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="p-3 mb-2">
-    <div class="container">
-        <h1 class="text-center">Disable Table</h1>
-        <hr>
-        <div class="container mb-2">
-            <form action="searchData.php" class="d-flex" method="POST">
-                <input class="form-control me-2" type="search" name="tname" placeholder="ป้อนชื่อทีม">
-                <button class="btn btn-outline-info ml-1" type="send">Search</button>
+<body class="p-3 mb-2 bg-gray-100">
+    <div class="container mx-auto overflow-x-auto p-6 bg-white rounded shadow-md">
+        <h1 class="text-center text-2xl font-bold">Disable Table</h1>
+        <hr class="my-4">
+        <div class="mb-3">
+            <form action="searchData.php" class="flex space-x-2" method="POST">
+                <input class="flex-grow p-2 border border-gray-300 rounded" type="search" name="tname" placeholder="ป้อนชื่อทีม">
+                <button class="rounded p-2 bg-blue-500 text-white" type="submit">Search</button>
             </form>
         </div>
         <?php if ($count>0) { ?>
-        <table class="table table-bordered">
+        <table class="table-auto w-full border-collapse border border-gray-300">
             <thead>
-                <tr>
-                    <th><center>detail_id</th>
-                    <th><center>team_name</th>
-                    <th><center>id</th>
-                    <th><center>detail_date</th>
-                    <th><center>detail_address</th>
-                    <th><center>detail_idp</th>
-                    <th><center>detail_tel</th>
-                    <th><center>detail_occ</th>
-                    <th><center>detail_salary</th>
-                    <th><center>detail_type</th>
-                    <th><center>แก้ไข</th>
-                    <th><center>ลบ</th>
+                <tr class="bg-gray-200">
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_id</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">id</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_date</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_address</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_idp</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_tel</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_occ</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_salary</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_type</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">แก้ไข</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">ลบ</th>
                 </tr>
             </thead>
             <tbody>
             <?php while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) { ?>
                 <tr>
-                    <!-- <td><center><?php //echo $order++ ?></td> -->
-                    <td><center><?php echo $row["detail_id"] ?></td>
-                    <td><center><?php echo $row["team_name"] ?></td>
-                    <td><center><?php echo $row["id"]?></td>
-                    <td><center><?php echo $row["detail_date"] ?></td>
-                    <td><center><?php echo $row["detail_address"] ?></td>
-                    <td><center><?php echo $row["detail_idp"] ?></td>
-                    <td><center><?php echo $row["detail_tel"] ?></td>
-                    <td><center><?php echo $row["detail_occ"] ?></td>
-                    <td><center><?php echo $row["detail_salary"] ?></td>
-                    <td><center><?php echo $row["detail_type"] ?></td>
-                    <td><center>
-                        <a href="editForm.php?detail_id=<?php echo $row["detail_id"] ?>" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_id"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["id"]?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_date"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_address"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_idp"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_tel"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_occ"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_salary"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_type"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center">
+                        <a href="editForm.php?detail_id=<?php echo $row["detail_id"] ?>" class="bg-blue-500 text-white rounded px-2 py-1"><i class="fa-solid fa-pen-to-square"></i></a>
                     </td>
-                    <td><center>
-                        <a href="deleteQueryString.php?detail_id=<?php echo $row["detail_id"] ?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่')"><i class="fa-solid fa-trash"></i></a>
+                    <td class="border border-gray-300 px-4 py-2 text-center">
+                        <a href="deleteQueryString.php?detail_id=<?php echo $row["detail_id"] ?>" class="bg-red-500 text-white rounded px-2 py-1" onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             <?php } ?>
             </tbody>
         </table>
         <?php } else { ?>
-            <div class="alert alert-danger" role="alert">
-                <b><center>ไม่มีข้อมูล!!<center><b>
+            <div class="text-center p-3 mt-4 bg-red-100 text-red-500 border border-red-300 rounded">
+                <b>ไม่มีข้อมูล!!</b>
             </div>
         <?php } ?>
-        <a href="index.php" class="btn btn-primary">กลับหน้าแรก</a>
+        <a href="index.php" class="bg-blue-500 text-white rounded inline-block mt-4 p-2 mr-1">กลับหน้าแรก</a>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
