@@ -72,7 +72,7 @@
       </ul>
     </div>
     <section class="home-section">
-        <div class="text">Dashboard</div>
+        <h1 class="text-center text-2xl font-bold">Admin</h1>
     </section>
 
     <script>

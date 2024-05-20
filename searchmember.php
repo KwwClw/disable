@@ -1,8 +1,9 @@
 <?php 
 
 require('dbconnect.php');
+$firstname = $_POST['firstname'];
 
-$sql = "SELECT * FROM tb_member ORDER BY id ASC";
+$sql = "SELECT * FROM tb_member WHERE firstname LIKE '%$firstname%' ORDER BY firstname ASC";
 $result = mysqli_query($connect, $sql);
 
 $count = mysqli_num_rows($result);
@@ -131,6 +132,7 @@ $order = 1;
             </div>
         <?php } ?>
         <a href="insert_memberform.php" class="bg-green-500 text-white rounded inline-block mt-4 p-2 mr-1">เพิ่มข้อมูล</a>
+        <a href="member_tb.php" class="bg-blue-500 text-white rounded inline-block mt-4 p-2 mr-1">กลับหน้าแรก</a>
     </div>
     </section>
 

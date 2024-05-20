@@ -1,8 +1,9 @@
 <?php 
 
 require('dbconnect.php');
+$detail_care_name = $_POST['detail_care_name'];
 
-$sql = "SELECT * FROM tb_member ORDER BY id ASC";
+$sql = "SELECT * FROM tb_detail WHERE detail_care_name LIKE '%$detail_care_name%' ORDER BY detail_care_name ASC";
 $result = mysqli_query($connect, $sql);
 
 $count = mysqli_num_rows($result);
@@ -86,11 +87,11 @@ $order = 1;
     </div>
     <section class="home-section">
     <div class="container mx-auto overflow-x-auto p-6 bg-white rounded shadow-md">
-        <h1 class="text-center text-2xl font-bold">Member Table</h1>
+        <h1 class="text-center text-2xl font-bold">Disable Table_2</h1>
         <hr class="my-4">
         <div class="mb-3">
-            <form action="searchmember.php" class="flex space-x-2" method="POST">
-                <input class="flex-grow p-2 border border-gray-300 rounded" type="search" name="firstname" placeholder="ป้อนชื่อทีม">
+            <form action="searchdetail_tb2.php" class="flex space-x-2" method="POST">
+                <input class="flex-grow p-2 border border-gray-300 rounded" type="search" name="detail_care_name" placeholder="ป้อนชื่อทีม">
                 <button class="rounded p-2 bg-blue-500 text-white" type="submit">Search</button>
             </form>
         </div>
@@ -98,29 +99,25 @@ $order = 1;
         <table class="table-auto w-full border-collapse border border-gray-300">
             <thead>
                 <tr class="bg-gray-200">
-                    <th class="border border-gray-300 px-4 py-2 text-center">id</th>
-                    <th class="border border-gray-300 px-4 py-2 text-center">firstname</th>
-                    <th class="border border-gray-300 px-4 py-2 text-center">lastname</th>
-                    <th class="border border-gray-300 px-4 py-2 text-center">age</th>
-                    <th class="border border-gray-300 px-4 py-2 text-center">gender</th>
-                    <th class="border border-gray-300 px-4 py-2 text-center">แก้ไข</th>
-                    <th class="border border-gray-300 px-4 py-2 text-center">ลบ</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_id</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_care</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_care_name</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_care_lastname</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_care_tel</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_line</th>
+                    <th class="border border-gray-300 px-4 py-2 text-center">detail_facebook</th>
                 </tr>
             </thead>
             <tbody>
             <?php while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) { ?>
                 <tr>
-                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["id"]?></td>
-                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["firstname"] ?></td>
-                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["lastname"] ?></td>
-                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["age"] ?></td>
-                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["gender"] ?></td>
-                    <td class="border border-gray-300 px-4 py-2 text-center">
-                        <a href="editForm.php?id=<?php echo $row["id"] ?>" class="bg-blue-500 text-white rounded px-2 py-1"><i class="fa-solid fa-pen-to-square"></i></a>
-                    </td>
-                    <td class="border border-gray-300 px-4 py-2 text-center">
-                        <a href="deletemember.php?id=<?php echo $row["id"] ?>" class="bg-red-500 text-white rounded px-2 py-1" onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่')"><i class="fa-solid fa-trash"></i></a>
-                    </td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_id"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_care"]?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_care_name"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_care_lastname"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_care_tel"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_line"] ?></td>
+                    <td class="border border-gray-300 px-4 py-2 text-center"><?php echo $row["detail_facebook"] ?></td>
                 </tr>
             <?php } ?>
             </tbody>
@@ -130,7 +127,8 @@ $order = 1;
                 <b>ไม่มีข้อมูล!!</b>
             </div>
         <?php } ?>
-        <a href="insert_memberform.php" class="bg-green-500 text-white rounded inline-block mt-4 p-2 mr-1">เพิ่มข้อมูล</a>
+        <a href="insertForm.php" class="bg-green-500 text-white rounded inline-block mt-4 p-2 mr-1">เพิ่มข้อมูล</a>
+        <a href="detail_tb2.php" class="bg-blue-500 text-white rounded inline-block mt-4 p-2 mr-1">กลับหน้าแรก</a>
     </div>
     </section>
 

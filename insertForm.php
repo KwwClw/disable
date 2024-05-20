@@ -6,14 +6,7 @@ $sql_member = "SELECT * FROM tb_member ORDER BY id ASC";
 $result_member = mysqli_query($connect, $sql_member);
 $rowm = mysqli_num_rows($result_member);
 $count = $rowm;
-// echo $row."<br>";
-// echo $count."<br>";
 
-// for($i = 0; $i < $count; $i++) {
-//     // echo "option ";
-//     $row = mysqli_fetch_array($result_member, MYSQLI_BOTH);
-//     echo $i. "รหัสพนักงาน = ".$row["id"]."<br>";
-// }
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +32,6 @@ $count = $rowm;
         <hr class="my-4">
         <form action="insertData.php" method="POST">
 
-            <div class="mb-4">
-                <label for="team_name" class="block font-medium text-gray-700">ชื่อทีม</label>
-                <input type="text" name="team_name" class="mt-1 p-2 bg-white text-1xl border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md focus:ring-1">
-            </div>
             <div class="mb-4">
                 <label for="id" class="block font-medium text-gray-700">id</label>
                 <select name="id" class="mt-1 p-2 bg-white text-1xl border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md focus:ring-1">

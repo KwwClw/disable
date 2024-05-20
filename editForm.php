@@ -41,10 +41,6 @@ $count = $rowm;
             <input type="hidden" value="<?php echo $row["detail_id"]; ?>" name="detail_id"> <!-- hide id -->
 
             <div class="mb-4">
-                <label for="team_name" class="block font-medium text-gray-700">ชื่อทีม</label>
-                <input type="text" name="team_name" class="mt-1 p-2 bg-white text-1xl border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md focus:ring-1" value="<?php echo $row["team_name"]; ?>">
-            </div>
-            <div class="mb-4">
                 <label for="id" class="block font-medium text-gray-700">id</label>
                 <select name="id" class="mt-1 p-2 bg-white text-1xl border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md focus:ring-1">
                     <option value="<?php echo $row["id"]; ?>"><?php echo $row["id"]; ?></option>
