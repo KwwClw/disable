@@ -32,7 +32,10 @@ $count = $rowm;
         <hr class="my-4">
         <form action="insertData.php" method="POST">
 
-            <div class="mb-4">
+        <input type="hidden" name="user_id" value="<?php echo $id; ?>">
+        <input type="hidden" name="admin_id" value="<?php echo $admin; ?>">
+
+            <!-- <div class="mb-4">
                 <label for="id" class="block font-medium text-gray-700">id</label>
                 <select name="id" class="mt-1 p-2 bg-white text-1xl border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md focus:ring-1">
                     <option value="">---Select ID---</option>
@@ -43,7 +46,7 @@ $count = $rowm;
                         }
                     ?>
                 </select>
-            </div>
+            </div> -->
             <div class="mb-4">
                 <label for="detail_date" class="block font-medium text-gray-700">ว/ด/ป เกิด</label>
                 <input type="date" name="detail_date" class="mt-1 p-2 bg-white text-1xl border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md focus:ring-1">
@@ -83,7 +86,7 @@ $count = $rowm;
             </style>
             
             <div class="question mb-3 flex items-center">
-                <label for="detail_care" class="font-medium text-gray-700 mr-2">Do you have a coupon?</label>
+                <label for="detail_care" class="font-medium text-gray-700 mr-2">คุณมีผู้แลรึเปล่า?</label>
                 <input class="form-checkbox h-6 w-6" type="checkbox" name="detail_care" value="1">
             </div>
         
