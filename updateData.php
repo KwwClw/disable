@@ -33,34 +33,36 @@ if ($detail_care == "No") {
     $detail_facebook = $_POST['detail_facebook'];
 }
 
-$sql = "UPDATE tb_detail SET
-    id = '$id',
-    detail_date = '$detail_date',
-    detail_address = '$detail_address',
-    detail_idp = '$detail_idp',
-    detail_tel = '$detail_tel',
-    detail_occ = '$detail_occ',
-    detail_salary = '$detail_salary',
-    detail_type = '$detail_type',
-    detail_care = '$detail_care',
-    detail_care_name = '$detail_care_name',
-    detail_care_lastname = '$detail_care_lastname',
-    detail_care_tel = '$detail_care_tel',
-    detail_line = '$detail_line',
-    detail_facebook = '$detail_facebook'
-    WHERE detail_id = '$detail_id'";
+echo $detail_care;
 
-// echo $sql;
+// $sql = "UPDATE tb_detail SET
+//     id = '$id',
+//     detail_date = '$detail_date',
+//     detail_address = '$detail_address',
+//     detail_idp = '$detail_idp',
+//     detail_tel = '$detail_tel',
+//     detail_occ = '$detail_occ',
+//     detail_salary = '$detail_salary',
+//     detail_type = '$detail_type',
+//     detail_care = '$detail_care',
+//     detail_care_name = '$detail_care_name',
+//     detail_care_lastname = '$detail_care_lastname',
+//     detail_care_tel = '$detail_care_tel',
+//     detail_line = '$detail_line',
+//     detail_facebook = '$detail_facebook'
+//     WHERE detail_id = '$detail_id'";
 
-$result = mysqli_query($connect, $sql);
+// // echo $sql;
 
-if($result) {
-    echo "<script>";
-    echo "alert('อัปเดตข้อมูลเสร็จสิ้น!');";
-    echo "window.location = 'index.php';";
-    echo "</script>";
-} else {
-    echo mysqli_error($connect);
-}
+// $result = mysqli_query($connect, $sql);
+
+// if($result) {
+//     echo "<script>";
+//     echo "alert('อัปเดตข้อมูลเสร็จสิ้น!');";
+//     echo "window.location = 'index.php';";
+//     echo "</script>";
+// } else {
+//     echo mysqli_error($connect);
+// }
 
 ?>
